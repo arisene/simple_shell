@@ -1,8 +1,12 @@
 #include "main.h"
 
 /**
- * strd_up - returns a pointer to a newly allocated space in memory
+ * strd_up - returns a pointer to a newly allocated space in memory, which
+ * contains a copy of the string given as a parameter
+ * @str: pointer to a string
+ * Return: pointer to a string
  */
+
 char *strd_up(char *str)
 {
 	int i, l;
@@ -31,7 +35,12 @@ char *strd_up(char *str)
 
 /**
  * _concatall - concats 3 strings in a newly allocated memory
+ * @name: first string
+ * @sep: second string
+ * @value: Third string
+ * Return: pointer to the new string
  */
+
 char *_concatall(char *name, char *sep, char *value)
 {
 	char *result;
@@ -65,7 +74,9 @@ char *_concatall(char *name, char *sep, char *value)
 /**
  * str_len - it gives the length of a string
  * @s: pointer to the string
+ * Return: the length of string
  */
+
 int str_len(char *s)
 {
 	int i = 0;
@@ -79,8 +90,12 @@ int str_len(char *s)
 
 /**
  * put_char - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
+
 int put_char(char c)
 {
 	return (write(1, &c, 1));
@@ -101,3 +116,4 @@ void _puts_(char *str)
 		i++;
 	}
 }
+

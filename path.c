@@ -88,14 +88,17 @@ list_path *add_node_end(list_path **head, char *str)
 list_path *linkpath(char *path)
 {
 	list_path *head = '\0';
-	char *token;
-	char *cpath = strd_up(path);
+	char *token, *theRest;
+	char *cpath;
 
-	token = strtok(cpath, ":");
+	cpath = strd_up(path);
+	theRest = cpath;
+
+	token = strtok_r(theRest, ":", &theRest);
 	while (token)
 	{
 		head = add_node_end(&head, token);
-		token = strtok(NULL, ":");
+		token = strtok_r(NULL, ":", &theRest);
 	}
 
 	return (head);

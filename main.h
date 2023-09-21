@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -25,7 +26,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 extern char **environ;
 
-/* @dir: directory in path; @p: pointer to next node */
+/**
+ * struct list_path - Linked list containing PATH directories
+ * @dir: directory in path
+ * @p: pointer to next node
+ */
+
 typedef struct list_path
 {
 	char *dir;
@@ -38,7 +44,12 @@ list_path *add_node_end(list_path **head, char *str);
 list_path *linkpath(char *path);
 char *_which(char *filename, list_path *head);
 
-/* struct mybuild - pointer to function with corresponding buildin command */
+/**
+ * struct mybuild - pointer to function with corresponding buildin command
+ * @name: buildin command
+ * @func: execute the buildin command
+ */
+
 typedef struct mybuild
 {
 	char *name;

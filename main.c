@@ -1,6 +1,10 @@
 #include "main.h"
 
-/*provides a prompt to ask user for input*/
+/**
+ * single_handler - checks if Ctrl C is pressed
+ * @sig_num: int
+ */
+
 
 void single_handler(int sig_num)
 {
@@ -10,7 +14,12 @@ void single_handler(int sig_num)
 	}
 }
 
-/* functions checks the command entered by the user */
+/**
+* _EOF_ - handles the End of File
+* @len: return value of getline function
+* @buff: buffer
+ */
+
 void _EOF_(int len, char *buff)
 {
 	(void)buff;
@@ -25,8 +34,9 @@ void _EOF_(int len, char *buff)
 	}
 }
 /**
-  * _isatty - verify if it is terminal
+  * _satty - verif if terminal
   */
+
 
 void _satty(void)
 {
@@ -34,8 +44,10 @@ void _satty(void)
 		_puts_("(KSHELL) & ");
 }
 /**
- * main shell(return 0)
+ * main - Shell
+ * Return: 0 on success
  */
+
 
 int main(void)
 {

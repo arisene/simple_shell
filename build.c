@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * exitt - exits the shell with or without a return of status 
+ * exitt - exits the shell with or without a return of status n
+ * @arv: array of words of the entered line
  */
+
 void exitt(char **arv)
 {
 	int i, n;
@@ -23,8 +25,10 @@ void exitt(char **arv)
 
 /**
  * _atoi - converts a string into an integer
+ *@s: pointer to a string
  *Return: the integer
  */
+
 int _atoi(char *s)
 {
 	int i, integer, sign = 1;
@@ -49,7 +53,9 @@ int _atoi(char *s)
 
 /**
  * env - prints the current environment
+ * @arv: array of arguments
  */
+
 void env(char **arv __attribute__ ((unused)))
 {
 
@@ -63,8 +69,11 @@ void env(char **arv __attribute__ ((unused)))
 
 }
 
-/*_setenv - Initialize a new environment variable, or modify an existing one
- * */
+/**
+ * _setenv - Initialize a new environment variable, or modify an existing one
+ * @arv: array of entered words
+ */
+
 void _setenv(char **arv)
 {
 	int i, j, k;
@@ -109,7 +118,11 @@ void _setenv(char **arv)
 	}
 }
 
-/* _unsetenv - Remove an environment variable */
+/**
+ * _unsetenv - Remove an environment variable
+ * @arv: array of entered words
+ */
+
 void _unsetenv(char **arv)
 {
 	int i, j;
